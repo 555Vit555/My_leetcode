@@ -1,30 +1,58 @@
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
-        # for i in range(len(strs)):
-        #     if strs[0][i] != strs[i][i]:
-        #         return strs[0][:i]
-        #     elif strs[0][0] != strs[1][0]:
-        #         return None
-        # if strs[0][0] == strs[1][0] == strs[2][0]:
-        #     return self.longestCommonPrefix(strs[1:])
-        # else:
-        
        
+        
+            if not strs:
+                return ''
             for word in strs:
                 if word == "" or strs[0][0] != word[0]:
                     return ''
                             
                 for j in range(len(word)):
                     
-                    
-                    if len(strs) == 1:
-                        return word
-                    
-                    elif strs[0][j] != word[j]:
+                    #if strs[0][j+1] :
+                        if len(strs) == 1:
+                            return word
+                        # elif word == 1:
+                        #     return strs[0][:j]
                         
-                        return strs[0][:j]
+                        elif strs[0][j] != word[j]:
+                            
+                            return strs[0][:j]
+            # if not strs:
+            #     return ''
+            
+            
+            # # result = ''
+            
+            # # for i in range(len(strs)):
+            # #     for j in range(len(min(strs))):
+            # #         if strs[0][j] == strs[i][j]:
+            # #             result += strs[0][j]
+            # # return result
+            # result = ""
+            # for j in range(len(strs[0])):
+            #     if len(strs[0]) >= len(strs[j]):
+            #         for i in range(1, len(strs)):
                     
+            #             if strs[0][j] != strs[i][j]:
+            #                 return result
+                    
+            #     result += strs[0][j]
+            # return result            
+                        
+                    
+                        
+                        
+            
+                    
+                    #if strs[0][j+1] :
+                        
+                        # elif word == 1:
+                        #     return strs[0][:j]
+                        
                        
+                    
             
             
             
@@ -68,7 +96,11 @@ x = Solution().longestCommonPrefix(strs3)
 print(x)
 print("------------------------------------------------")
 strs4 = ["ab", "a"]
-x = Solution().longestCommonPrefix(strs3)
+x = Solution().longestCommonPrefix(strs4)
 print(x)
 
-#print("------------------------------------------------")
+print("------------------------------------------------")
+# strs4=["ab","a"]
+# x = Solution().longestCommonPrefix(strs4)
+# print(x)
+# print("------------------------------------------------")
