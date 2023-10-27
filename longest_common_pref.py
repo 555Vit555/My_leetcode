@@ -1,25 +1,31 @@
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
+            
+        #print(strs[0][0])
        
         
-            if not strs:
-                return ''
+            # if not strs:
+            #     return ''
             for word in strs:
-                if word == "" or strs[0][0] != word[0]:
-                    return ''
+            #     if word == "" or strs[0][0] != word[0]:
+            #         return ''
                             
-                for j in range(len(word)):
-                    
+                for j in range(len(min(strs))):
+                    if min(strs)[j] != word[j]:
+                        if strs[0][:j] == "":
+                            return min(strs)
+                           
+                        else: 
+                            return strs[0][:j]
                     #if strs[0][j+1] :
-                        if len(strs) == 1:
-                            return word
+                        # if len(strs) == 1:
+                        #     return word
                         # elif word == 1:
                         #     return strs[0][:j]
                         
-                        elif strs[0][j] != word[j]:
-                            
-                            return strs[0][:j]
-            # if not strs:
+                        #elif strs[0][j] != word[j]:
+                    
+            #if not strs:
             #     return ''
             
             
@@ -78,23 +84,23 @@ class Solution:
 
 
 
-strs1 = ["flower","flow","flight"]
-x = Solution().longestCommonPrefix(strs1)
-print(x)
-print("------------------------------------------------")
+# strs1 = ["flower","flow","flight"]
+# x = Solution().longestCommonPrefix(strs1)
+# print(x)
+# print("------------------------------------------------")
 
-str2 = ["dog","racecar","car"]
-x = Solution().longestCommonPrefix(str2)
-print(x)
-print("------------------------------------------------")
-strs3=["a"]
-x = Solution().longestCommonPrefix(strs3)
-print(x)
-print("------------------------------------------------")
-strs3=[""]
-x = Solution().longestCommonPrefix(strs3)
-print(x)
-print("------------------------------------------------")
+# str2 = ["dog","racecar","car"]
+# x = Solution().longestCommonPrefix(str2)
+# print(x)
+# print("------------------------------------------------")
+# strs3=["a"]
+# x = Solution().longestCommonPrefix(strs3)
+# print(x)
+# print("------------------------------------------------")
+# strs3=[""]
+# x = Solution().longestCommonPrefix(strs3)
+# print(x)
+# print("------------------------------------------------")
 strs4 = ["ab", "a"]
 x = Solution().longestCommonPrefix(strs4)
 print(x)
